@@ -104,7 +104,6 @@ body {
 /* 画面幅が大きくなった時に画像が消えるのを潰す */
 
 .FV {
-    width: 863px;
     margin: 0 auto;
     margin-top: 100px;
     margin-bottom: 100px;
@@ -118,14 +117,13 @@ body {
 
 .FV_title {
     font-size: 82px;
-    width: 863px;
     margin-bottom: 40px;
     line-height: 1.1;
     text-align: center;
 }
 
 .FV_text {
-    font-size: 23px;
+    font-size: 24px;
     line-height: 1.6;
     text-align: center;
 }
@@ -136,19 +134,19 @@ body {
     display: flex;
     justify-content: space-between;
 }
+.aboutus__title--SP {
+    display: none;
+}
 .aboutus_img {
     border-bottom-right-radius: 82px;
     overflow: hidden;
     width: 50%;
 }
-.aboutus__title--PC {
-    width: 272px;
-    margin-top: 60px;
-    margin-bottom: 40px;
-}
+
 .aboutus_textwrap {
     width: 41%;
 }
+
 h3 {
     font-size: 44px;
     margin-top: 20px;
@@ -160,18 +158,19 @@ h3 {
     line-height: 1.6;
 }
 
+h2 {
+    text-align: center;
+}
+h2 img {
+    vertical-align: auto;
+    height: 64px;
+    padding-top: 50px;
+    padding-bottom: 45px;
+}
 .menu_img {
     border-top-right-radius: 41px;
     overflow: hidden;
 }
-.h2 {
-    height: 8%;
-    /* margin: 0 auto; */
-    text-align: center;
-    padding-top: 100px;
-    padding-bottom: 45px;
-}
-
 .menu_wrap {
     max-width: 1000px;
     margin: 0 auto;
@@ -180,6 +179,8 @@ h3 {
 }
 .card {
     width: 30%;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 h4 {
@@ -193,16 +194,15 @@ h4 {
     margin-top: 10px;
     line-height: 1.4;
 }
-.gallery {
-    width: 1000px;
-    margin: 0 auto;
+.menu .gallery .event {
+    text-align: center;
 }
 
 .gallery_wrap {
     display: flex;
 }
 
-.event_wrap {
+.event_wrap-PC {
     border: 3px solid;
     background: #fff;
     padding: 40px 0px 40px 200px;
@@ -211,7 +211,7 @@ h4 {
     box-sizing: border-box;
 }
 
-.event_wrap li {
+.event_wrap-PC li {
     text-align: left;
     padding: 5px 0 5px 0;
 }
@@ -221,7 +221,7 @@ h4 {
     margin-top: 10px;
     margin-bottom: 10px;
 }
-.event_wrap a {
+.event_wrap-PC a {
     text-decoration: underline;
 }
 span {
@@ -229,7 +229,6 @@ span {
     margin-right: 40px;
 }
 .map {
-    width: 1000px;
     margin: 0 auto;
 }
 .map iframe {
@@ -307,7 +306,10 @@ span {
     display: none;
 }
 
-.aboutus__title--SP {
+.card {
+    width: 199%;
+}
+.event_wrap-SP {
     display: none;
 }
 @media screen and (max-width: 1100px) {
@@ -370,71 +372,153 @@ span {
         /* 135度と回してバツを作る */
     }
     .FV_title {
+        font-size: 34px;
+    }
+
+    h3 {
+        width: 100%;
         font-size: 36px;
     }
 
-    .h3 {
-        font-size: 36px;
-    }
-}
+    @media screen and (max-width: 767px) {
+        .logo {
+            width: 187px;
+        }
 
-h2 {
-    width: 100%;
-    text-align: center;
-}
-@media screen and (max-width: 767px) {
-    .logo {
-        width: 187;
-    }
+        .FV {
+            max-width: 767px;
+            text-align: center;
+            margin: 40px 0px 40px 0px;
+        }
+        .FV_subtitle {
+            font-size: 22px;
+        }
 
-    .FV {
-        width: 767px;
-        text-align: center;
-        /* margin: 0 auto; */
-        margin-top: 40px;
-        margin-bottom: 65px;
-    }
+        .FV_text br {
+            display: none;
+        }
+        .aboutus__title--PC {
+            display: none;
+        }
+        .aboutus__title--SP {
+            display: block;
+        }
+        .aboutus_img img {
+            border-top-right-radius: none;
+        }
+        .aboutus {
+            display: block;
+            max-width: 767px;
+        }
 
-    .aboutus__title--PC {
-        display: none;
-    }
-    .aboutus__title--SP {
-        display: block;
-    }
-    .aboutus {
-        display: block;
-        width: 100%;
-    }
+        .aboutus_img {
+            width: 100%;
+        }
 
-    h2 {
-        width: 100%;
-        text-align: center;
-    }
-    .gallery_wrap {
-        display: block;
-        width: 100%;
-    }
+        h2 img {
+            height: 45px;
+            text-align: center;
+        }
+        .h3 {
+            font-size: 16px;
+        }
+        .aboutus_textwrap {
+            width: 100%;
+        }
+        .menu_wrap {
+            margin: 0 auto;
+            display: block;
+        }
+        .menu__text {
+            max-width: 767px;
+        }
 
-    .event_wrap {
-        text-overflow: ellipsis;
-    }
+        .card {
+            width: 100%;
+            margin-bottom: 70px;
+        }
 
-    .header-wrap {
-        display: block;
-    }
+        .gallery_wrap {
+            display: block;
+            max-width: 767px;
+        }
+        .event_wrap-PC {
+            display: none;
+        }
+        .event_wrap-SP {
+            display: block;
+            border: 3px solid;
+            background: #fff;
+            margin: 0 auto;
+            max-width: 90%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .event_wrap-SP a {
+            text-decoration: underline;
+            font-size: 23px;
+        }
+        .date {
+            font-size: 23px;
+        }
 
-    .pc-nav ul {
-        display: block;
-    }
+        .event_wrap-SP li {
+            text-align: left;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
 
-    .aboutus {
-        display: block;
-    }
-    .menu_wrap {
-        display: block;
-    }
+        .event_wrap-SP > news {
+            overflow: hidden;
+            /* はみ出した所を隠す */
+            text-overflow: ellipsis;
+            /* ・・・にする */
+            white-space: nowrap;
+            /* 改行させない */
+        }
 
-    .footer {
-        display: block;
+        .footer_wrap {
+            max-width: 767px;
+            display: block;
+            text-align: left;
+            padding-top: 30px;
+            padding-bottom: 30px;
+        }
+        .logo_footer {
+            width: 300px;
+            margin-left: 30px;
+        }
+
+        .footer_address {
+            width: 100%;
+            margin-top: 30px;
+            margin-left: 30px;
+        }
+        .footer_text {
+            width: 80%;
+            font-size: 16px;
+        }
+
+        .top_btn {
+            max-width: 767px;
+        }
+        .header-wrap {
+            display: block;
+        }
+
+        .pc-nav ul {
+            display: block;
+        }
+
+        .aboutus {
+            display: block;
+        }
+        .menu_wrap {
+            display: block;
+        }
+
+        .footer {
+            display: block;
+        }
     }
 }
