@@ -69,6 +69,8 @@ body {
     padding-right: 6.53%;
     padding-top: 10px;
     position: absolute;
+    z-index: 100;
+    /* 重なり順 */
     top: 0;
     left: 0;
     width: 100%;
@@ -104,14 +106,14 @@ body {
 /* 画面幅が大きくなった時に画像が消えるのを潰す */
 
 .FV {
-    margin: 0 auto;
+    max-width: 1000;
+    text-align: center;
     margin-top: 100px;
     margin-bottom: 100px;
 }
 
 .FV_subtitle {
     font-size: 30px;
-    text-align: center;
     margin-bottom: 70px;
 }
 
@@ -119,13 +121,17 @@ body {
     font-size: 82px;
     margin-bottom: 40px;
     line-height: 1.1;
-    text-align: center;
 }
 
 .FV_text {
     font-size: 24px;
     line-height: 1.6;
-    text-align: center;
+}
+.PC_br {
+    display: block;
+}
+.SP_br {
+    display: none;
 }
 
 .aboutus {
@@ -137,6 +143,10 @@ body {
 .aboutus__title--SP {
     display: none;
 }
+.aboutus__title--PC img {
+    text-align: left;
+    height: 65px;
+}
 .aboutus_img {
     border-bottom-right-radius: 82px;
     overflow: hidden;
@@ -144,46 +154,51 @@ body {
 }
 
 .aboutus_textwrap {
-    width: 41%;
+    width: 40%;
 }
 
-h3 {
+.aboutus_concept {
+    width: 350px;
     font-size: 44px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    line-height: 1.3;
+    margin-top: 15px;
+    margin-bottom: 35px;
+    line-height: 1.38;
 }
 .aboutus__text {
     font-size: 16px;
-    line-height: 1.6;
+    line-height: 1.62;
 }
 
-h2 {
+.title img {
     text-align: center;
-}
-h2 img {
-    vertical-align: auto;
-    height: 64px;
-    padding-top: 50px;
+    height: 80px;
+    padding-top: 75px;
     padding-bottom: 45px;
+}
+
+ul menu_wrap {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1000px;
+}
+.menu_wrap {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
+    box-sizing: border-box;
+}
+.card {
+    width: 30%;
 }
 .menu_img {
     border-top-right-radius: 41px;
     overflow: hidden;
 }
-.menu_wrap {
-    max-width: 1000px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-}
-.card {
-    width: 30%;
-    margin-left: 10px;
-    margin-right: 10px;
-}
 
-h4 {
+.menu_category {
+    text-align: left;
     font-size: 38px;
     color: #d30202;
     margin-top: -20px;
@@ -192,41 +207,42 @@ h4 {
 .menu__text {
     font-size: 17px;
     margin-top: 10px;
-    line-height: 1.4;
-}
-.menu .gallery .event {
-    text-align: center;
+    line-height: 1.47;
+    text-align: left;
 }
 
-.gallery_wrap {
+.gallery_swiper {
     display: flex;
 }
 
+.event_wrap-SP {
+    display: none;
+}
 .event_wrap-PC {
+    max-width: 1000px;
     border: 3px solid;
     background: #fff;
-    padding: 40px 0px 40px 200px;
-    width: 1000px;
+    padding: 30px 0px 30px 10%;
     margin: 0 auto;
     box-sizing: border-box;
 }
 
 .event_wrap-PC li {
     text-align: left;
-    padding: 5px 0 5px 0;
+    padding: 12px 0px 12px 0px;
 }
 
 .news {
     font-size: 23px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    /* margin-top: 10px;
+    margin-bottom: 10px; */
 }
 .event_wrap-PC a {
     text-decoration: underline;
 }
-span {
+.news span {
     display: inline;
-    margin-right: 40px;
+    margin-right: 7%;
 }
 .map {
     margin: 0 auto;
@@ -234,17 +250,19 @@ span {
 .map iframe {
     width: 100%;
     height: 470px;
+    vertical-align: bottom;
+    /* 地図埋め込み後の謎の余白消す */
 }
 .footer {
     background-color: #fff;
+    padding-top: 80px;
+    padding-bottom: 80px;
 }
 
 .footer_wrap {
     max-width: 1000px;
     margin: 0 auto;
     display: flex;
-    padding-top: 80px;
-    padding-bottom: 80px;
 }
 .logo_footer {
     text-align: left;
@@ -252,17 +270,18 @@ span {
 }
 
 .footer_address {
-    width: 340px;
     margin-left: 70px;
 }
 .footer_text {
+    font-size: 20px;
     text-align: left;
-    line-height: 1.9;
+    line-height: 1.95;
 }
 
 .copyright {
     text-align: center;
     font-size: 16px;
+    padding-top: 75px;
 }
 
 .top_btn {
@@ -271,7 +290,7 @@ span {
     right: 20px;
     width: 125px;
 }
-
+/* ---------------------------------------- */
 .sp-nav {
     position: absolute;
     top: 0;
@@ -305,13 +324,16 @@ span {
 .sp-nav {
     display: none;
 }
+.slick-dots {
+    bottom: 25px;
+}
+.slick-dots li.slick-active button:before {
+    color: #fff;
+}
+.slick-dots li button:before {
+    color: #fff;
+}
 
-.card {
-    width: 199%;
-}
-.event_wrap-SP {
-    display: none;
-}
 @media screen and (max-width: 1100px) {
     .pc-nav {
         display: none;
@@ -372,153 +394,165 @@ span {
         /* 135度と回してバツを作る */
     }
     .FV_title {
-        font-size: 34px;
+        font-size: 66px;
+    }
+    .FV_text {
+        font-size: 20px;
     }
 
-    h3 {
-        width: 100%;
+    .aboutus_concept {
+        font-size: 40px;
+    }
+
+    .title {
+        hight: 58px;
+    }
+}
+@media screen and (max-width: 767px) {
+    .logo {
+        width: 187px;
+    }
+
+    .FV {
+        max-width: 767px;
+        text-align: center;
+        margin: 40px 0px 40px 0px;
+    }
+    .FV_subtitle {
+        font-size: 22px;
+    }
+    .FV_title {
+        font-size: 38px;
+        line-height: 1.15;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+    .FV_text {
+        font-size: 16px;
+        line-height: 1.87;
+        margin-bottom: 15px;
+    }
+    .PC_br {
+        display: none;
+    }
+    .SP_br {
+        display: block;
+    }
+
+    .aboutus__title--PC {
+        display: none;
+    }
+    .aboutus__title--SP {
+        width: 250px;
+        display: block;
+        margin-top: 50px;
+        margin-bottom: 15px;
+    }
+
+    .aboutus {
+        display: block;
+        /* max-width: 767px; */
+    }
+
+    .aboutus_img {
+        border-top-right-radius: none;
+    }
+    .aboutus_concept {
         font-size: 36px;
+        line-height: 1.25;
+        margin: 35px 20px 0 20px;
+    }
+    .aboutus__text {
+        font-size: 16px;
+        line-height: 1.75;
+        margin: 25px 20px 25px 20px;
     }
 
-    @media screen and (max-width: 767px) {
-        .logo {
-            width: 187px;
-        }
+    .title img {
+        text-align: center;
+        height: 72px;
+        padding-bottom: 45px;
+    }
 
-        .FV {
-            max-width: 767px;
-            text-align: center;
-            margin: 40px 0px 40px 0px;
-        }
-        .FV_subtitle {
-            font-size: 22px;
-        }
+    .menu_wrap {
+        display: block;
+        margin: 0 auto;
+        margin: 0px 20px 0px 20px;
+        width: auto;
+    }
+    .menu__text {
+        font-size: 17px;
+        line-height: 1.58;
+        margin: 25px 20px 25px 20px;
+    }
 
-        .FV_text br {
-            display: none;
-        }
-        .aboutus__title--PC {
-            display: none;
-        }
-        .aboutus__title--SP {
-            display: block;
-        }
-        .aboutus_img img {
-            border-top-right-radius: none;
-        }
-        .aboutus {
-            display: block;
-            max-width: 767px;
-        }
+    .card {
+        width: auto;
+        margin-bottom: 70px;
+    }
 
-        .aboutus_img {
-            width: 100%;
-        }
+    .gallery_swiper {
+        display: block;
+    }
+    .event_wrap-PC {
+        display: none;
+    }
+    .event_wrap-SP {
+        display: block;
+        border: 3px solid;
+        background: #fff;
+        margin: 0 auto;
+        max-width: 90%;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+    .event_wrap-SP a {
+        text-decoration: underline;
+        font-size: 16px;
+    }
 
-        h2 img {
-            height: 45px;
-            text-align: center;
-        }
-        .h3 {
-            font-size: 16px;
-        }
-        .aboutus_textwrap {
-            width: 100%;
-        }
-        .menu_wrap {
-            margin: 0 auto;
-            display: block;
-        }
-        .menu__text {
-            max-width: 767px;
-        }
+    .date {
+        font-size: 16px;
+        display: block;
+    }
 
-        .card {
-            width: 100%;
-            margin-bottom: 70px;
-        }
+    .news {
+        overflow: hidden;
+        /* はみ出した所を隠す */
+        text-overflow: ellipsis;
+        /* ・・・にする */
+        white-space: nowrap;
+        /* 改行させない */
+    }
+    .footer {
+        padding-top: 45px;
+    }
 
-        .gallery_wrap {
-            display: block;
-            max-width: 767px;
-        }
-        .event_wrap-PC {
-            display: none;
-        }
-        .event_wrap-SP {
-            display: block;
-            border: 3px solid;
-            background: #fff;
-            margin: 0 auto;
-            max-width: 90%;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-        .event_wrap-SP a {
-            text-decoration: underline;
-            font-size: 23px;
-        }
-        .date {
-            font-size: 23px;
-        }
+    .footer_wrap {
+        max-width: 90%;
+        display: block;
+        /* text-align: left; */
+        /* padding-top: 30px; */
+        padding-bottom: 30px;
+    }
+    .logo_footer {
+        width: 330px;
+        margin-bottom: 35px;
+    }
+    .footer_address {
+        margin: auto;
+    }
 
-        .event_wrap-SP li {
-            text-align: left;
-            padding-top: 10px;
-            padding-bottom: 10px;
-        }
+    .footer_text {
+        width: 80%;
+        font-size: 16px;
+    }
+    .copyright {
+        padding-top: 25px;
+    }
 
-        .event_wrap-SP > news {
-            overflow: hidden;
-            /* はみ出した所を隠す */
-            text-overflow: ellipsis;
-            /* ・・・にする */
-            white-space: nowrap;
-            /* 改行させない */
-        }
-
-        .footer_wrap {
-            max-width: 767px;
-            display: block;
-            text-align: left;
-            padding-top: 30px;
-            padding-bottom: 30px;
-        }
-        .logo_footer {
-            width: 300px;
-            margin-left: 30px;
-        }
-
-        .footer_address {
-            width: 100%;
-            margin-top: 30px;
-            margin-left: 30px;
-        }
-        .footer_text {
-            width: 80%;
-            font-size: 16px;
-        }
-
-        .top_btn {
-            max-width: 767px;
-        }
-        .header-wrap {
-            display: block;
-        }
-
-        .pc-nav ul {
-            display: block;
-        }
-
-        .aboutus {
-            display: block;
-        }
-        .menu_wrap {
-            display: block;
-        }
-
-        .footer {
-            display: block;
-        }
+    .top_btn {
+        width: 100px;
     }
 }
