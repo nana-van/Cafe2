@@ -8,6 +8,7 @@
 
     <meta name="description" content="width=device-width,initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+
     <link rel="stylesheet" type="text/css"
         href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
     <!-- slickのCSS　style.cssの前に　スライダーの記述 -->
@@ -15,6 +16,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <!-- sぃckのJS JQの書き方だから後ろに-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Modaal/0.4.4/js/modaal.min.js"
+        integrity="sha512-nHgjiAB+J6KrOqNCT7NFIkxXZ/ZYrSFLm1herueNG50Sy8yz9nnCXsugcuzG2d500D/a0dH8huUwC26mZs24uw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <body>
@@ -108,26 +112,23 @@
         <h2 class="title">
             <img src="images/gallery@2x.png" alt="GALLERYのテキスト">
         </h2>
-        <ul class="gallery_swiper">
-            <li class="swiper-slide"><a href="#images/pc_gallary_05-100.jpg"><img src="images/pc_gallary_05-100.jpg"
-                        alt="店内で過ごす人々"></a></li>
-            <li class="swiper-slide"><a href="images/pc_gallary_04-100.jpg"><img src="images/pc_gallary_04-100.jpg"
-                        alt="コーヒー豆"></a></li>
-            <li class="swiper-slide"><a href="images/pc_gallary_03-100.jpg"><img src="images/pc_gallary_03-100.jpg"
-                        alt="店内カウンター"></a></li>
-            <li class="swiper-slide"><a href="images/pc_gallary_02-100.jpg"><img src="images/pc_gallary_02-100.jpg"
-                        alt="CAFE看板"></a></li>
-            <li class="swiper-slide"><a href="images/pc_gallary_01-100.jpg"><img src="images/pc_gallary_01-100.jpg"
-                        alt="ラテアート"></a></li>
-            <li class="swiper-slide"><a href="images/menu_board.jpg"><img src="images/menu_board.jpg" alt="メニューボード"></a>
-            </li>
-        </ul>
-        <div class="batsu">
-            <span></span>
+        <div class="swiper">
+            <ul class="swiper-wrapper">
+                <li><a href="#images/pc_gallary_05-100.jpg"><img src="images/pc_gallary_05-100.jpg" alt="店内で過ごす人々"></a>
+                </li>
+                <li><a href="images/pc_gallary_04-100.jpg"><img src="images/pc_gallary_04-100.jpg" alt="コーヒー豆"></a></li>
+                <li><a href="images/pc_gallary_03-100.jpg"><img src="images/pc_gallary_03-100.jpg" alt="店内カウンター"></a>
+                </li>
+                <li><a href="images/pc_gallary_02-100.jpg"><img src="images/pc_gallary_02-100.jpg" alt="CAFE看板"></a>
+                </li>
+                <li><a href="images/pc_gallary_01-100.jpg"><img src="images/pc_gallary_01-100.jpg" alt="ラテアート"></a></li>
+                <li><a href="images/menu_board.jpg"><img src="images/menu_board.jpg" alt="メニューボード"></a></li>
+            </ul>
+            <!-- <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div> -->
         </div>
     </section>
-
-    <a href="#header"><img src="images/to_top@2x.png" alt="PAGE TOPのアイコン"></a>
 
     <section class="event" id="event">
         <h2 class="title">
@@ -225,7 +226,7 @@
             // {}の中に入ってるのがオプション
 
             // ギャラリースライダー
-            $('.gallery_swiper').slick({
+            $('.swiper-wrapper').slick({
                 autoplay: true,
                 // 自動再生初期3000
                 autoplaySpeed: 2000,
